@@ -1,0 +1,23 @@
+{
+  "exclude": ["node_modules", "./packages/**/node_modules"],
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "strict": true,
+    "sourceMap": true,
+    // "declaration": false,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "target": "es2017",
+    "jsx": "react",
+    "allowJs": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    // "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "application_a/SayHelloFromA": ["./packages/application-a/src/app"],
+      "application_b/SayHelloFromB": ["./packages/application-b/src/app"],
+      "*": ["*", "./node_modules/*"]
+    }
+  }
+}
