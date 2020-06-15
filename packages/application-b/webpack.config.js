@@ -4,8 +4,8 @@ const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
 
 const mode = process.env.NODE_ENV || "production";
 
-const publicPath = "http://localhost:3002/";
-const remoteHost = "http://localhost:3001";
+const publicPath = "http://localhost:3012/";
+const remoteHost = "http://localhost:3011";
 
 module.exports = {
   mode,
@@ -46,7 +46,7 @@ module.exports = {
         "./SayHelloFromB": "./src/app", // This will be make the application-b available as remote
       },
       remotes: {
-        application_a: "application_a_remote", // loads application-a as remote
+        application_a: "application_a", // loads application-a as remote
       },
       shared: ["react", "react-dom"],
     }),

@@ -4,8 +4,8 @@ const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
 
 const mode = process.env.NODE_ENV || "production";
 
-const publicPath = "http://localhost:3001/";
-const remoteHost = "http://localhost:3002";
+const publicPath = "http://localhost:3011/";
+const remoteHost = "http://localhost:3012";
 
 module.exports = {
   mode,
@@ -39,8 +39,8 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "application_a_remote",
-      library: { type: "var", name: "application_a_remote" },
+      name: "application_a",
+      library: { type: "var", name: "application_a" },
       filename: "remoteEntry.js", // expose it as `remoteEntry.js`
       exposes: {
         "./SayHelloFromA": "./src/app", // This will be make the application-a available as remote

@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "serve dist -p 3001",
+    "start": "serve dist -p 3011",
     "build": "webpack --mode production",
-    "dev": "nodemon  --exec 'concurrently \"webpack --watch\" \"serve dist -p 3001\"' -e config.js"
+    "dev": "nodemon  --exec 'concurrently \"webpack --watch\" \"serve dist -p 3011\"' -e config.js"
   },
   "dependencies": {
     "react": "^16.13.1",

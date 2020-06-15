@@ -4,8 +4,8 @@ const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
 
 const mode = process.env.NODE_ENV || "production";
 
-const publicPath = "http://localhost:3000/";
-const remoteHosts = ["http://localhost:3001", "http://localhost:3002"];
+const publicPath = "http://localhost:3010/";
+const remoteHosts = ["http://localhost:3011", "http://localhost:3012"];
 
 module.exports = {
   mode,

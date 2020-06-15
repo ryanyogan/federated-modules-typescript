@@ -1,1 +1,2 @@
-import "./bootstrap";
+// dynamically import the bootstrap script
+import("./bootstrap");
