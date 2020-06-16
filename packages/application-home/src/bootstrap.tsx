@@ -1,14 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import SayHelloFromA from "application_a/SayHelloFromA";
+import SayHelloFromB from "applicationCart/SayHelloFromB";
 
 import App from "./app";
 
 ReactDOM.render(
   <>
     <App />
-    <SayHelloFromA />
+    <SayHelloFromB
+      callback={() => {
+        console.log("hi from callback");
+      }}
+    />
   </>,
   document.getElementById("root")
 );

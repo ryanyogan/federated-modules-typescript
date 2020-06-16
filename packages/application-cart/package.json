@@ -3,14 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "serve dist -p 3012",
+    "start": "serve dist -p 3012 --single",
     "build": "webpack --mode production",
-    "dev": "nodemon --exec 'concurrently \"webpack --watch\" \"serve dist -p 3012\"' -e config.js"
+    "dev-old": "NODE_ENV=development concurrently \"webpack --watch\" \"serve dist -p 3012 --single\"",
+    "dev": "NODE_ENV=development webpack-dev-server"
   },
   "dependencies": {
-    "@types/react": "^16.9.36",
-    "@types/react-dom": "^16.9.8",
-    "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -18,16 +16,21 @@
     "@babel/core": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "@types/node": "^14.0.13",
+    "@types/react": "^16.9.36",
+    "@types/react-dom": "^16.9.8",
     "@types/webpack": "^4.41.17",
+    "@types/webpack-dev-server": "^3.11.0",
     "babel-loader": "^8.0.6",
     "concurrently": "^5.1.0",
     "html-webpack-plugin": "^4.3.0",
     "html-webpack-tags-plugin": "^2.0.17",
+    "nodemon": "^2.0.4",
     "serve": "^11.3.2",
     "ts-loader": "^7.0.5",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.5",
     "webpack": "5.0.0-beta.17",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   }
 }

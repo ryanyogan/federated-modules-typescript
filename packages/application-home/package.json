@@ -1,11 +1,12 @@
 {
-  "name": "application-a",
+  "name": "application-home",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "serve dist -p 3011",
+    "start": "serve dist -p 3011 --single",
     "build": "webpack --mode production",
-    "dev": "nodemon  --exec 'concurrently \"webpack --watch\" \"serve dist -p 3011\"' -e config.js"
+    "dev-old": "NODE_ENV=development concurrently \"webpack --watch\" \"serve dist -p 3011 --single\"",
+    "dev": "NODE_ENV=development webpack-dev-server"
   },
   "dependencies": {
     "react": "^16.13.1",
@@ -19,6 +20,7 @@
     "@types/react": "^16.9.36",
     "@types/react-dom": "^16.9.8",
     "@types/webpack": "^4.41.17",
+    "@types/webpack-dev-server": "^3.11.0",
     "babel-loader": "^8.0.6",
     "concurrently": "^5.1.0",
     "html-webpack-plugin": "^4.3.0",
@@ -30,6 +32,7 @@
     "ts-node": "^8.10.2",
     "typescript": "^3.9.5",
     "webpack": "5.0.0-beta.17",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   }
 }

@@ -1,10 +1,13 @@
+// @ts-check
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// @ts-ignore
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
 
 const mode = process.env.NODE_ENV || "production";
 
-const publicPath = "http://localhost:3010/";
+const port = 3010;
+const publicPath = `http://localhost:${port}/`;
 const remoteHosts = ["http://localhost:3011", "http://localhost:3012"];
 
 module.exports = {
@@ -14,6 +17,13 @@ module.exports = {
     publicPath,
   },
   devtool: "source-map",
+  devServer: {
+    port,
+    contentBase: "./dist",
+    historyApiFallback: {
+      index: "index.html",
+    },
+  },
   optimization: {
     minimize: mode === "production",
   },
@@ -22,13 +32,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.jsx?$/,
-        loader: require.resolve("babel-loader"),
-        options: {
-          presets: [require.resolve("@babel/preset-react")],
-        },
-      },
       {
         test: /\.tsx?$/,
         use: "ts-loader",
@@ -41,13 +44,10 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "application_shell_remote",
       library: { type: "var", name: "application_shell_remote" },
-      filename: "app-shell.js", // expose it as `remoteEntry.js`
-      // exposes: {
-      //   "./SayHelloFromA": "./src/app", // This will be make the application-a available as remote
-      // },
+      filename: "app-shell.js", // expose it as `app-shell.js
       remotes: {
-        application_a: "application_a", // loads application-b as remote
-        application_b: "application_b", // loads application-b as remote
+        applicationHome: "applicationHome", // loads Home app as remote
+        applicationCart: "applicationCart", // loads Cart app as remote
       },
       shared: ["react", "react-dom"],
     }),
@@ -58,7 +58,7 @@ module.exports = {
     // load the other apps entry
     new HtmlWebpackTagsPlugin({
       tags: remoteHosts.map((remoteHost) => `${remoteHost}/remoteEntry.js`),
-      append: false, // prepend this as needs to be loaded before application_a
+      append: false, // prepend this as needs to be loaded before application-home
       publicPath: false,
     }),
   ],

@@ -4,7 +4,8 @@ const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
 
 const mode = process.env.NODE_ENV || "production";
 
-const publicPath = "http://localhost:3012/";
+const port = 3012;
+const publicPath = `http://localhost:${port}/`;
 const remoteHost = "http://localhost:3011";
 
 module.exports = {
@@ -14,6 +15,13 @@ module.exports = {
     publicPath,
   },
   devtool: "source-map",
+  devServer: {
+    port,
+    contentBase: "./dist",
+    historyApiFallback: {
+      index: "index.html",
+    },
+  },
   optimization: {
     minimize: mode === "production",
   },
@@ -22,13 +30,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.jsx?$/,
-        loader: require.resolve("babel-loader"),
-        options: {
-          presets: [require.resolve("@babel/preset-react")],
-        },
-      },
       {
         test: /\.tsx?$/,
         use: "ts-loader",
@@ -39,14 +40,14 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "application_b",
-      library: { type: "var", name: "application_b" }, // Applicatiob
+      name: "applicationCart",
+      library: { type: "var", name: "applicationCart" },
       filename: "remoteEntry.js",
       exposes: {
         "./SayHelloFromB": "./src/app", // This will be make the application-b available as remote
       },
       remotes: {
-        application_a: "application_a", // loads application-a as remote
+        applicationHome: "applicationHome", // loads application-home as remote
       },
       shared: ["react", "react-dom"],
     }),
@@ -57,7 +58,7 @@ module.exports = {
     // load the other apps entry
     new HtmlWebpackTagsPlugin({
       tags: [`${remoteHost}/remoteEntry.js`],
-      append: false, // prepend this as needs to be loaded before application_a
+      append: false, // prepend this as needs to be loaded before application-home
       publicPath: false,
     }),
   ],

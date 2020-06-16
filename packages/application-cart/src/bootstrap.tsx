@@ -1,18 +1,15 @@
+/* webpackChunkName: 'bootstrap-app-b' */
 import React from "react";
 import ReactDOM from "react-dom";
 
-import SayHelloFromB from "application_b/SayHelloFromB";
+import SayHelloFromA from "applicationHome/SayHelloFromA";
 
 import App from "./app";
 
 ReactDOM.render(
   <>
     <App />
-    <SayHelloFromB
-      callback={() => {
-        console.log("hi from callback");
-      }}
-    />
+    <SayHelloFromA />
   </>,
   document.getElementById("root")
 );
