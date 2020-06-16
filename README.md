@@ -6,9 +6,10 @@ Type-safe setup, sharing functionality between apps without having to duplicate 
 
 ## Setup
 
-3 Applications
+3 React applications
 
 - Shell (Host)
-  Provides the Nav, styling and router
+  - Provides the Nav, styling and router
+  - Lazy loads the other apps
 - Home (Remote/Host)
 - Cart (Remote/Host)
