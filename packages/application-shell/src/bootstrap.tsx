@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import App from "./app";
 import Loading from "./loading";
 
@@ -20,8 +20,7 @@ ReactDOM.render(
           />
         </Route>
         <Route path="/products">
-          <h1>Products</h1>
-          {/* Make this an app later */}
+          <h1>Products - could be driven by a remote as well</h1>
         </Route>
         <Route path="/">
           <Home />

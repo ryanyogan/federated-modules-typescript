@@ -1,7 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
-const AppShell: React.FC<{ cartCount?: number }> = (params) => {
+const AppShell: React.FC<{}> = (params) => {
   return (
     <Router>
       <div className="app-shell">
@@ -10,7 +10,7 @@ const AppShell: React.FC<{ cartCount?: number }> = (params) => {
           <nav>
             <Link to="/">Home</Link>
             <Link to="/products">Products</Link>
-            <Link to="/Cart">Cart ({params.cartCount || 0})</Link>
+            <Link to="/Cart">Cart</Link>
           </nav>
         </div>
         <div className="app-shell-main-content">{params.children}</div>
