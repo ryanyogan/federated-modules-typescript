@@ -1,7 +1,14 @@
-# A Webpack 5 Federation Boilerplate
+# Webpack 5 Federated Modules Typescript Example
 
-See the accompanying article at: [https://federated-libraries.now.sh/get-started](https://federated-libraries.now.sh/get-started)
+## Objective
 
-- **A host**: a Webpack build that is initialized first during a page load (when the onLoad event is triggered)
-- **A remote**: another Webpack build, where part of it is being consumed by a “host”
-- **Bidirectional-hosts**: when a bundle or Webpack build can work as a host or as a remote. Either consuming other applications or being consumed by others — at runtime
+Type-safe setup, sharing functionality between apps without having to duplicate their types.
+
+## Setup
+
+3 Applications
+
+- Shell (Host)
+  Provides the Nav, styling and router
+- Home (Remote/Host)
+- Cart (Remote/Host)
