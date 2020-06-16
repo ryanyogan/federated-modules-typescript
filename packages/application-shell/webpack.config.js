@@ -1,6 +1,4 @@
-// @ts-check
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// @ts-ignore
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
 

@@ -13,8 +13,8 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "applicationHome/SayHelloFromA": ["./packages/application-home/src/app"],
-      "applicationCart/SayHelloFromB": ["./packages/application-cart/src/app"],
+      "applicationHome/HomeRemote": ["./packages/application-home/src/app"],
+      "applicationCart/CartRemote": ["./packages/application-cart/src/app"],
       "*": ["*", "./node_modules/*"]
     }
   }

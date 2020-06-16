@@ -1,7 +1,9 @@
+// To use Home as Host
+
 import React from "react";
 import ReactDOM from "react-dom";
 
-import SayHelloFromB from "applicationCart/SayHelloFromB";
+import SayHelloFromB from "applicationCart/CartRemote";
 
 import App from "./app";
 

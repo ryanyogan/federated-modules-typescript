@@ -44,7 +44,7 @@ module.exports = {
       library: { type: "var", name: "applicationCart" },
       filename: "remoteEntry.js",
       exposes: {
-        "./SayHelloFromB": "./src/app", // This will be make the application-b available as remote
+        "./CartRemote": "./src/app", // This will be make the application-b available as remote
       },
       remotes: {
         applicationHome: "applicationHome", // loads application-home as remote
