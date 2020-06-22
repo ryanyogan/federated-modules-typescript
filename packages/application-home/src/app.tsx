@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Home() {
-  return <h1>Hello from Home!</h1>;
+  return <p style={{ background: "#fcc", padding: "1em" }}>Hello from Home!</p>;
 }

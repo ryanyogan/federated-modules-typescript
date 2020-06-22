@@ -20,7 +20,9 @@ ReactDOM.render(
           />
         </Route>
         <Route path="/products">
-          <h1>Products - could be driven by a remote as well</h1>
+          <p style={{ padding: "1em" }}>
+            Products - could be driven by a remote as well
+          </p>
         </Route>
         <Route path="/">
           <Home />

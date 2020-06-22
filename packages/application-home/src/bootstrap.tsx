@@ -9,10 +9,12 @@ import App from "./app";
 
 ReactDOM.render(
   <>
+    <h1 className="title">🏠 Home Host Application</h1>
     <App />
+    <h2 className="remote-title">Remote Cart</h2>
     <Cart
       callback={() => {
-        console.log("hi from callback");
+        alert("callback called (in Home Host Application)");
       }}
     />
   </>,

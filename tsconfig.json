@@ -14,8 +14,7 @@
     "allowSyntheticDefaultImports": true,
     "paths": {
       "applicationHome/HomeRemote": ["./packages/application-home/src/app"],
-      "applicationCart/CartRemote": ["./packages/application-cart/src/app"],
-      "*": ["*", "./node_modules/*"]
+      "applicationCart/CartRemote": ["./packages/application-cart/src/app"]
     }
   }
 }
