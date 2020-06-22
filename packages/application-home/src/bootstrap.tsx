@@ -3,14 +3,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import SayHelloFromB from "applicationCart/CartRemote";
+import Cart from "applicationCart/CartRemote";
 
 import App from "./app";
 
 ReactDOM.render(
   <>
     <App />
-    <SayHelloFromB
+    <Cart
       callback={() => {
         console.log("hi from callback");
       }}
